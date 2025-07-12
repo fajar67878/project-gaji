@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-3">Laporan Gaji</h3>
+<div class="card">
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            {% for g in gaji %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ g.nama }}
+                <span class="badge bg-success rounded-pill">Rp{{ g.jumlah }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

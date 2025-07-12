@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-3">Data Karyawan</h3>
+<form method="POST" class="mb-4">
+    <div class="row">
+        <div class="col">
+            <input name="nama" placeholder="Nama" class="form-control" required>
+        </div>
+        <div class="col">
+            <input name="jabatan" placeholder="Jabatan" class="form-control" required>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-success">Tambah</button>
+        </div>
+    </div>
+</form>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Jabatan</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k in karyawan %}
+        <tr>
+            <td>{{ k.nama }}</td>
+            <td>{{ k.jabatan }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
